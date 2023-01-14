@@ -16,7 +16,7 @@ if (strNum != null && strNum != "")
 {
     number = int.Parse(strNum);
     Console.Write("Ваше число: ");
-    Console.Write(number);
+    Console.Write(number + " - ");
     if ((number % 2) == 0)
     {
         Console.WriteLine("является чётным");
