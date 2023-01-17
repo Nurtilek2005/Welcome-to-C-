@@ -9,7 +9,7 @@
 string? strNum = null;
 int dayOfWeek = 0;
 
-Console.Write("Введите число, для того что бы получить третью цифру: ");
+Console.Write("Введите день недели в ввиде цифры, для того что бы узнать выходной ли: ");
 strNum = Console.ReadLine();
 
 if (strNum != null && strNum != "")
