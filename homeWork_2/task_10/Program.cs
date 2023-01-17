@@ -22,7 +22,7 @@ if (strNum != null && strNum != "")
     }
     else
     {
-        Console.WriteLine("Важе число не трёхзначное!");
+        Console.WriteLine("Ваше число не трёхзначное!");
     }
 }
 else
