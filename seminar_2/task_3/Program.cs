@@ -23,7 +23,7 @@ if (firstNumStr != null && firstNumStr != "")
         if (res == 0) {
             Console.WriteLine($"Число {firstNum} кратный числу {secondNum}");
         } else {
-            Console.WriteLine($"Число {firstNum} кратный числу {secondNum}. Остаток: {res}");
+            Console.WriteLine($"Число {firstNum} не кратный числу {secondNum}. Остаток: {res}");
         }
     }
     else
