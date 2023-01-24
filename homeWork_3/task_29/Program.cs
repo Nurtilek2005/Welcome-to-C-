@@ -14,7 +14,7 @@ void PrintArray(int[] arr)
     Console.Write("[");
     for (int i = 0; i < len - 1; i++)
     {
-        Console.Write(arr[i] + " ");
+        Console.Write(arr[i] + ", ");
     }
     Console.Write(arr[len - 1] + "]");
 }
@@ -34,6 +34,23 @@ void FillArrayWithRandom(int[] array, int from, int to)
 }
 /* ------------------------------------------------ */
 
-int[] numberArray = new int[8];
+
+/* --- Получение данных от пользователя ----------- */
+int PromptNumber(string message)
+{
+    Console.Write(message);
+    string line = Console.ReadLine();
+    if (line == null || line == "")
+    {
+        Console.WriteLine("Вы ничего не ввели!");
+        return 0;
+    }
+    return int.Parse(line);
+}
+/* ------------------------------------------------ */
+
+int size = PromptNumber("Введите размер массива: ");
+int[] numberArray = new int[size];
+
 FillArrayWithRandom(numberArray, 1, 20);
 PrintArray(numberArray);
