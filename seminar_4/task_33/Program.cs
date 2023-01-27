@@ -4,19 +4,16 @@
 -3; массив [6, 7, 19, 345, 3] -> да
 */
 
-bool IsNumberExists(int[] numArray, int find)
+string IsNumberExists(int[] numArray, int find)
 {
-    int size = numArray.Length;
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < numArray.Length; i++)
     {
-        int number = numArray[i];
-
-        if (number == find)
+        if (numArray[i] == find)
         {
-            return true;
+            return "Да";
         }
     }
-    return false;
+    return "Нет";
 }
 
 
@@ -25,17 +22,16 @@ int[] GenerateArrayWithRandom(int size, int from, int to)
     int[] array = new int[size];
     for (int i = 0; i < size; i++)
     {
-        int randNum = new Random().Next(from, (to + 1));
-        array[i] = randNum;
+        array[i] = new Random().Next(from, (to + 1));
     }
     return array;
 }
 
 
 /* ----------- Генерируем массив ----------------------------- */
-int[] numsArr = GenerateArrayWithRandom(16, -20, 20);
+int[] numsArr = GenerateArrayWithRandom(16, 0, 10);
 Console.WriteLine("[" + String.Join(", ", numsArr) + "]");
-Console.WriteLine("В массиве число 15 -> " + IsNumberExists(numsArr, 15));
-Console.WriteLine("В массиве число -4 -> " + IsNumberExists(numsArr, -4));
+Console.WriteLine("В массиве число 5 -> " + IsNumberExists(numsArr, 5));
+Console.WriteLine("В массиве число 1 -> " + IsNumberExists(numsArr, 1));
 Console.WriteLine("В массиве число 8 -> " + IsNumberExists(numsArr, 8));
 /* ----------------------------------------------------------- */
