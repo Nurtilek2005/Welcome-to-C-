@@ -6,13 +6,14 @@
 Если N = 7 -> 0 1 1 2 3 5 8
 */
 
-int GetFibonachi(int len)
+/* --------------------------------------------- */
+int CalcFibonacci(int number)
 {
-    if (len == 0) return 0;
     int temp1 = 0;
     int temp2 = 0;
     int result = 1;
-    for (int i = 2; i <= len; i++)
+    if (number == 0) return 0;
+    for (int i = 2; i <= number; i++)
     {
         temp2 = temp1 + result;
         temp1 = result;
@@ -20,6 +21,17 @@ int GetFibonachi(int len)
     }
     return result;
 }
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+void Fibonacci(int num)
+{
+    for (int n = 0; n <= num; n++)
+    {
+        Console.Write(CalcFibonacci(n) + " ");
+    }
+}
+/* --------------------------------------------- */
 
 /* --------------------------------------------- */
 int PromptNumber(string message)
@@ -32,16 +44,6 @@ int PromptNumber(string message)
         return 0;
     }
     return int.Parse(line);
-}
-/* --------------------------------------------- */
-
-/* --------------------------------------------- */
-void Fibonacci(int num)
-{
-    for (int n = 0; n <= num; n++)
-    {
-        Console.Write(GetFibonachi(n) + " ");
-    }
 }
 /* --------------------------------------------- */
 
