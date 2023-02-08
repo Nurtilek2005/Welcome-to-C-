@@ -1,4 +1,7 @@
-﻿namespace MatrixMaster
+﻿using System.Data.Common;
+using System.Diagnostics.CodeAnalysis;
+
+namespace MatrixMaster
 {
     public class Matrix<T>
     {
@@ -10,6 +13,13 @@
             this.rows = rows;
             this.columns = columns;
             storage = new T[this.rows, this.columns];
+        }
+
+        public bool IsPointExists(int row, int column)
+        {
+            if (row >= rows || row < 0) return false;
+            if (column >= columns || column < 0) return false;
+            return true;
         }
 
         public void SetValue(T value, int row, int column)
@@ -29,8 +39,8 @@
 
         public T[]? GetRowArray(int row)
         {
-            if (row >= rows || row < 0) return null;
             T[] rowArr = new T[columns];
+            if (row >= rows || row < 0) return null;
             for (int i = 0; i < columns; i++)
             {
                 rowArr[i] = storage[row, i];
@@ -38,13 +48,10 @@
             return rowArr;
         }
 
-        public T[] GetColumnArray(int column)
+        public T[]? GetColumnArray(int column)
         {
             T[] columnArr = new T[rows];
-            if (column >= columns || column < 0)
-            {
-                return columnArr;
-            }
+            if (column >= columns || column < 0) return null;
             for (int i = 0; i < rows; i++)
             {
                 columnArr[i] = storage[i, column];
