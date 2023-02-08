@@ -1,8 +1,15 @@
 ﻿/*
 Задача 47. Задайте двумерный массив размером m×n, 
 заполненный случайными вещественными числами.
+
 m = 3, n = 4.
-0,5 7 -2 -0,2
-1 -3,3 8 -9,9
-8 7,8 -7,1 9
+0,5     7    -2  -0,2
+  1  -3,3     8  -9,9
+  8   7,8  -7,1     9
 */
+
+using MatrixMaster;
+
+Matrix<double> matrix = new Matrix<double>(3, 4);
+matrix.RandomDoubles(-10, 10);
+Console.WriteLine(matrix);
