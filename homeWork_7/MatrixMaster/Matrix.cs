@@ -27,6 +27,43 @@
             return storage[row, column];
         }
 
+        public T[]? GetRowArray(int row)
+        {
+            if (row >= rows || row < 0) return null;
+            T[] rowArr = new T[columns];
+            for (int i = 0; i < columns; i++)
+            {
+                rowArr[i] = storage[row, i];
+            }
+            return rowArr;
+        }
+
+        public T[] GetColumnArray(int column)
+        {
+            T[] columnArr = new T[rows];
+            if (column >= columns || column < 0)
+            {
+                return columnArr;
+            }
+            for (int i = 0; i < rows; i++)
+            {
+                columnArr[i] = storage[i, column];
+            }
+            return columnArr;
+        }
+
+        public void RandomNumbers(int lowerBound, int upperBound)
+        {
+            Random random = new Random();
+            for (int i = 0; i < GetRowsLength(); i++)
+            {
+                for (int j = 0; j < GetColumnsLength(); j++)
+                {
+                    storage.SetValue(random.Next(lowerBound, upperBound), i, j);
+                }
+            }
+        }
+
         public void RandomDoubles(int lowerBound, int upperBound)
         {
             Random random = new Random();
