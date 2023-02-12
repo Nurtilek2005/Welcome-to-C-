@@ -16,4 +16,5 @@ using MatrixMaster;
 Matrix<int> matrix = new Matrix<int>(3, 4);
 matrix.RandomNumbers(1, 9);
 
-Console.WriteLine(matrix[2, 3]);
+Console.WriteLine(matrix + "\n--------------");
+Console.WriteLine(matrix.GetSortedNums(true));

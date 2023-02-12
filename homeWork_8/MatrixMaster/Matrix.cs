@@ -71,20 +71,6 @@ namespace MatrixMaster
             }
         }
 
-        public T[,] GetSortedNums(bool ascending = true)
-        {
-            T[,] sortedMatrix = new T[rows, columns];
-            for (int i = 0; i < rows; i++)
-            {
-                int tempMax = Convert.ToInt32(storage[i, 0]);
-                for (int j = 1; j < columns; j++)
-                {
-                    int tempNum = Convert.ToInt32(storage[i, j]);
-                    if (tempMax < tempNum)
-                }
-            }
-        }
-
         public void RandomDoubles(int lowerBound, int upperBound)
         {
             Random random = new Random();
@@ -97,6 +83,48 @@ namespace MatrixMaster
                     storage.SetValue(Math.Round(randDouble, 1), i, j);
                 }
             }
+        }
+        public Matrix<int> Duplicate()
+        {
+            Matrix<int> duplicate = new Matrix<int>(rows, columns);
+            for (int i = 0; i < GetRowsLength(); i++)
+            {
+                for (int j = 0; j < GetColumnsLength(); j++)
+                {
+                    int tempNum = Convert.ToInt32(storage[i, j]);
+                    duplicate.SetValue(tempNum, i, j);
+                }
+            }
+            return duplicate;
+        }
+
+        public Matrix<int> GetSortedNums(bool ascending = true)
+        {
+            Matrix<int> sortedMatrix = Duplicate();
+            for (int row = 0; row < rows; row++)
+            {
+                for (int i = 0; i < columns; i++)
+                {
+                    int tempMax = Convert.ToInt32(sortedMatrix.GetValue(row, i));
+                    for (int j = 0; j <= columns - 1; j++)
+                    {
+                        int tempNum = Convert.ToInt32(sortedMatrix.GetValue(row, j));
+                        if (tempMax > tempNum && !ascending)
+                        {
+                            tempMax = sortedMatrix.GetValue(row, i);
+                            sortedMatrix.SetValue(tempNum, row, i);
+                            sortedMatrix.SetValue(tempMax, row, j);
+                        }
+                        else if (tempMax < tempNum && ascending)
+                        {
+                            tempMax = sortedMatrix.GetValue(row, i);
+                            sortedMatrix.SetValue(tempNum, row, i);
+                            sortedMatrix.SetValue(tempMax, row, j);
+                        }
+                    }
+                }
+            }
+            return sortedMatrix;
         }
 
         public override string ToString()
