@@ -37,10 +37,10 @@ namespace MatrixMaster
             return storage[row, column];
         }
 
-        public T[]? GetRowArray(int row)
+        public T[] GetRowArray(int row)
         {
             T[] rowArr = new T[columns];
-            if (row >= rows || row < 0) return null;
+            if (row >= rows || row < 0) return rowArr;
             for (int i = 0; i < columns; i++)
             {
                 rowArr[i] = storage[row, i];
@@ -48,10 +48,10 @@ namespace MatrixMaster
             return rowArr;
         }
 
-        public T[]? GetColumnArray(int column)
+        public T[] GetColumnArray(int column)
         {
             T[] columnArr = new T[rows];
-            if (column >= columns || column < 0) return null;
+            if (column >= columns || column < 0) return columnArr;
             for (int i = 0; i < rows; i++)
             {
                 columnArr[i] = storage[i, column];
