@@ -8,3 +8,17 @@
 15 18
 */
 
+using MatrixMaster;
+
+Matrix<int> matrix1 = new Matrix<int>(3, 3);
+Matrix<int> matrix2 = new Matrix<int>(3, 3);
+
+matrix1.RandomNumbers(1, 9);
+matrix2.RandomNumbers(1, 9);
+
+Console.WriteLine("- 1 -");
+Console.WriteLine(matrix1);
+Console.WriteLine("- 2 -");
+Console.WriteLine(matrix2);
+Console.WriteLine("-----");
+Console.WriteLine("-----");

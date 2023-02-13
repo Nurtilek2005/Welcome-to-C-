@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task_58", "task_58.csproj", "{2E66BD88-8639-4512-AB8A-5CF8B6D6E2AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task_58", "task_58.csproj", "{2E66BD88-8639-4512-AB8A-5CF8B6D6E2AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixMaster", "..\MatrixMaster\MatrixMaster.csproj", "{7DB6137C-1982-4AD0-BD25-7148C430E900}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2E66BD88-8639-4512-AB8A-5CF8B6D6E2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E66BD88-8639-4512-AB8A-5CF8B6D6E2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E66BD88-8639-4512-AB8A-5CF8B6D6E2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB6137C-1982-4AD0-BD25-7148C430E900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB6137C-1982-4AD0-BD25-7148C430E900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB6137C-1982-4AD0-BD25-7148C430E900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB6137C-1982-4AD0-BD25-7148C430E900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
