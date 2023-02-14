@@ -8,6 +8,20 @@ namespace MatrixMaster
         private T[,] storage;
         private int rows, columns;
 
+        // Здесь ошибки нужно обрабатывать?
+        public T this[int row, int column]
+        {
+            get
+            {
+                return storage[row, column];
+            }
+            
+            set
+            {
+                storage[row, column] = value;
+            }
+        }
+
         public Matrix(int rows, int columns)
         {
             this.rows = rows;
@@ -134,7 +148,7 @@ namespace MatrixMaster
             {
                 for (int j = 0; j < columns - 1; j++)
                 {
-                    strMatrix += storage[i, j] + " ";
+                    strMatrix += storage[i, j] + "\t";
                 }
                 strMatrix += storage[i, columns - 1];
                 if (i < (rows - 1)) strMatrix += "\n";
