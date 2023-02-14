@@ -51,6 +51,11 @@ namespace MatrixMaster
             return storage[row, column];
         }
 
+        public int GetSize()
+        {
+            return rows * columns;
+        }
+
         public T[] GetRowArray(int row)
         {
             T[] rowArr = new T[columns];
@@ -148,7 +153,7 @@ namespace MatrixMaster
             {
                 for (int j = 0; j < columns - 1; j++)
                 {
-                    strMatrix += storage[i, j] + "\t";
+                    strMatrix += storage[i, j] + " ";
                 }
                 strMatrix += storage[i, columns - 1];
                 if (i < (rows - 1)) strMatrix += "\n";
